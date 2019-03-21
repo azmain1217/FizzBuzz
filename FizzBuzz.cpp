@@ -4,9 +4,10 @@ Program: FizzBuzz
 Description: This program checks to see if numbers are divisible by 3, 5 or both. If it is divisible by 3, returns Fizz. If divisible by 5, returns Buzz. If divisible by both 3 and 5
 then returns FizzBuzz. Lastly, if it is not divisible by either numbers then returns just the number.
 
-Copyright © 2018 Syed Azmain
+Copyright Â© 2018 Syed Azmain
 */
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -54,10 +55,13 @@ void fizzBuzz_check(int n)
 	
 		for (int i=1; i<=n; i++)
 		{
-			if (i%3==0 && i%5==0) 	cout << "FizzBuzz" << endl;
-			else if (i%3==0) 		cout << "Fizz" << endl;
-			else if(i%5==0)			cout << "Buzz" << endl;
-			else 					cout << i << endl;
+			string fb = "";
+			
+    			if (i%3 == 0){fb += "Fizz";}
+    			if (i%5 == 0){fb += "Buzz";}
+    			if (fb == ""){fb = to_string(i);}
+
+    			cout << fb << endl;
 		}
 	}
 }
